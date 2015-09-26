@@ -3,7 +3,7 @@ local cargo = {}
 local function merge(target, source, ...)
   if not target or not source then return target end
   for k, v in pairs(source) do target[k] = v end
-  return merge(source, ...)
+  return merge(target, ...)
 end
 
 local la, lf, lg = love.audio, love.filesystem, love.graphics
