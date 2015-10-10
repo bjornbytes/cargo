@@ -36,6 +36,16 @@ function love.draw()
 end
 ```
 
+And it will just work.  You can also do the following to expose your entire project as part of the Lua global scope:
+
+```
+setmetatable(_G, {
+  __index = require('cargo').init('/')
+})
+```
+
+In this example, if you have an image located at `images/player.png`, you can just call `love.graphics.draw(images.player)` without having to call `love.graphics.newImage`.
+
 Advanced
 ---
 
