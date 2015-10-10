@@ -60,7 +60,7 @@ function cargo.init(config)
       end
     end
 
-    return rawget(t, k)
+    return error("[cargo] No matching file for path " .. path)
   end
 
   init = function(path)
