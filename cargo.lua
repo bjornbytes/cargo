@@ -14,8 +14,12 @@ local function makeFont(path)
   end
 end
 
+local function loadFile(path)
+  return lf.load(path)()
+end
+
 cargo.loaders = {
-  lua = dofile,
+  lua = lf and loadFile,
   png = lg and lg.newImage,
   jpg = lg and lg.newImage,
   dds = lg and lg.newImage,
