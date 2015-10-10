@@ -38,7 +38,7 @@ end
 
 And it will just work.  You can also do the following to expose your entire project as part of the Lua global scope:
 
-```
+```lua
 setmetatable(_G, {
   __index = require('cargo').init('/')
 })
