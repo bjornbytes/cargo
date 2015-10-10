@@ -39,7 +39,7 @@ function cargo.init(config)
   local init
 
   local function halp(t, k)
-    local path = t._path .. '/' .. k
+    local path = (t._path .. '/' .. k):gsub('^/+', '')
     if lf.isDirectory(path) then
       rawset(t, k, init(path))
       return t[k]
