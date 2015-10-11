@@ -83,7 +83,7 @@ Here is a list of default loaders used:
 
 | Extension | Loader                    |
 | --------- | ------------------------- |
-| lua       | `dofile`                  |
+| lua       | `love.filesystem.load`    |
 | png       | `love.graphics.newImage`  |
 | jpg       | `love.graphics.newImage`  |
 | dds       | `love.graphics.newImage`  |
