@@ -51,7 +51,7 @@ function cargo.init(config)
     else
       for extension, loader in pairs(loaders) do
         local file = path .. '.' .. extension
-        if lf.exists(file) then
+        if loader and lf.exists(file) then
           local asset = loader(file)
           rawset(t, k, asset)
           for pattern, processor in pairs(processors) do

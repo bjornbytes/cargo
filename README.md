@@ -95,6 +95,8 @@ Here is a list of default loaders used:
 
 The loader for `.ttf` files is special. Instead of directly returning an asset, this loader returns a function that accepts a size for the font and returns a new font with the specified size.
 
+To have cargo ignore files with a certain extension, specify `false` as the loader.
+
 ### Processors
 
 Sometimes, it can be helpful to do some extra processing on assets after they are loaded.
