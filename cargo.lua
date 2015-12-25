@@ -1,4 +1,4 @@
--- cargo v0.1.0
+-- cargo v0.1.1
 -- https://github.com/bjornbytes/cargo
 -- MIT License
 
@@ -27,6 +27,7 @@ cargo.loaders = {
   png = lg and lg.newImage,
   jpg = lg and lg.newImage,
   dds = lg and lg.newImage,
+  ogv = lg and lg.newVideo,
   glsl = lg and lg.newShader,
   mp3 = la and la.newSource,
   ogg = la and la.newSource,
