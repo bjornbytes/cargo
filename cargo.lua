@@ -1,3 +1,7 @@
+-- cargo v0.1.0
+-- https://github.com/bjornbytes/cargo
+-- MIT License
+
 local cargo = {}
 
 local function merge(target, source, ...)
