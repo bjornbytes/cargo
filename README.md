@@ -87,6 +87,7 @@ Here is a list of default loaders used:
 | png       | `love.graphics.newImage`  |
 | jpg       | `love.graphics.newImage`  |
 | dds       | `love.graphics.newImage`  |
+| ogv       | `love.graphics.newVideo`  |
 | glsl      | `love.graphics.newShader` |
 | mp3       | `love.audio.newSource`    |
 | ogg       | `love.audio.newSource`    |
