@@ -33,7 +33,8 @@ cargo.loaders = {
   ogg = la and la.newSource,
   wav = la and la.newSource,
   txt = lf and lf.read,
-  ttf = lg and makeFont
+  ttf = lg and makeFont,
+  otf = lg and makeFont
 }
 
 cargo.processors = {}
