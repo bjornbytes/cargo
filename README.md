@@ -94,7 +94,7 @@ Here is a list of default loaders used:
 | wav       | `love.audio.newSource`    |
 | txt       | `love.filesystem.read`    |
 
-The loader for `.ttf` files is special. Instead of directly returning an asset, this loader returns a function that accepts a size for the font and returns a new font with the specified size.
+The loader for `.ttf` and `.otf` files is special. Instead of directly returning an asset, this loader returns a function that accepts a size for the font and returns a new font with the specified size.
 
 To have cargo ignore files with a certain extension, specify `false` as the loader.
 
