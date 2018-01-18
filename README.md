@@ -93,8 +93,11 @@ Here is a list of default loaders used:
 | ogg       | `love.audio.newSource`    |
 | wav       | `love.audio.newSource`    |
 | txt       | `love.filesystem.read`    |
+| fnt       | `love.graphics.newFont`   |
 
 The loader for `.ttf` and `.otf` files is special. Instead of directly returning an asset, this loader returns a function that accepts a size for the font and returns a new font with the specified size.
+
+The loader for `.fnt` files requires the image file path to be set in the file as it won't be passed to [love.graphics.newFont](https://love2d.org/wiki/love.graphics.newFont#Function_3).
 
 To have cargo ignore files with a certain extension, specify `false` as the loader.
 
