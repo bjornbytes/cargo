@@ -52,8 +52,8 @@ function cargo.init(config)
 
   local function halp(t, k)
     local path = (t._path .. '/' .. k):gsub('^/+', '')
-    local fileInfo = lf.getInfo(path)
-    if fileInfo and fileInfo.type == 'directory' then
+    local fileInfo = lf.getInfo(path, 'directory')
+    if fileInfo then
       rawset(t, k, init(path))
       return t[k]
     else
