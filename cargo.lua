@@ -12,6 +12,11 @@ end
 
 local la, lf, lg = love.audio, love.filesystem, love.graphics
 
+local function makeSound(path)
+  local info = lf.getInfo(path, 'file')
+  return la.newSource(path, (info and info.size and info.size < 5e5) and 'static' or 'stream')
+end
+
 local function makeFont(path)
   return function(size)
     return lg.newFont(path, size)
@@ -29,9 +34,9 @@ cargo.loaders = {
   dds = lg and lg.newImage,
   ogv = lg and lg.newVideo,
   glsl = lg and lg.newShader,
-  mp3 = la and la.newSource,
-  ogg = la and la.newSource,
-  wav = la and la.newSource,
+  mp3 = la and makeSound,
+  ogg = la and makeSound,
+  wav = la and makeSound,
   txt = lf and lf.read,
   ttf = lg and makeFont,
   otf = lg and makeFont,
