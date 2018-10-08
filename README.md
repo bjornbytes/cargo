@@ -75,11 +75,13 @@ assets = cargo.init({
 After something has been loaded, you can set it to `nil` to clear it from the cargo table.  Note
 that it will only be garbage collected if nothing else references it.
 
-You can also preload all of the assets by calling the cargo table as a function:
+You can also preload all of the assets in a cargo table by calling it (or any of its children) as a function:
 
-```
+```lua
 assets = cargo.init('media')()     -- Load everything in 'media'
 assets = cargo.init('media')(true) -- Load everything in 'media', recursively
+
+assets.sound.background()          -- Preload all of the background music
 ```
 
 ### Loaders
