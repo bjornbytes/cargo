@@ -47,7 +47,7 @@ cargo.processors = {}
 
 function cargo.init(config)
   if type(config) == 'string' then
-    config = {dir = config}
+    config = { dir = config }
   end
 
   local loaders = merge({}, cargo.loaders, config.loaders)
@@ -81,8 +81,21 @@ function cargo.init(config)
     return rawget(t, k)
   end
 
+  local function __call(t, recurse)
+    for i, f in ipairs(love.filesystem.getDirectoryItems(t._path)) do
+      local key = f:gsub('%..-$', '')
+      halp(t, key)
+
+      if recurse and love.filesystem.getInfo(t._path .. '/' .. f, 'directory') then
+        t[key](recurse)
+      end
+    end
+
+    return t
+  end
+
   init = function(path)
-    return setmetatable({_path = path}, {__index = halp})
+    return setmetatable({ _path = path }, { __index = halp, __call = __call })
   end
 
   return init(config.dir)

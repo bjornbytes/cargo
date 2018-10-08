@@ -2,6 +2,7 @@ Cargo
 ===
 
 Cargo makes it easy to manage assets in a Love2D project by exposing project directories as Lua tables.
+This means you can access your files from a table automatically without needing to load them first.
 Assets are lazily loaded, cached, and can be nested arbitrarily.
 
 Example
@@ -69,6 +70,16 @@ assets = cargo.init({
     end
   }
 })
+```
+
+After something has been loaded, you can set it to `nil` to clear it from the cargo table.  Note
+that it will only be garbage collected if nothing else references it.
+
+You can also preload all of the assets by calling the cargo table as a function:
+
+```
+assets = cargo.init('media')()     -- Load everything in 'media'
+assets = cargo.init('media')(true) -- Load everything in 'media', recursively
 ```
 
 ### Loaders
