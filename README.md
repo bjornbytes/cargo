@@ -3,7 +3,8 @@ Cargo
 
 Cargo makes it easy to manage assets in a Love2D project by exposing project directories as Lua tables.
 This means you can access your files from a table automatically without needing to load them first.
-Assets are lazily loaded, cached, and can be nested arbitrarily.
+Assets are lazily loaded, cached, and can be nested arbitrarily.  You can also manually preload sets
+of assets at a specific time to avoid loading hitches.
 
 Example
 ---
