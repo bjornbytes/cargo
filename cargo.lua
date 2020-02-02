@@ -37,6 +37,7 @@ cargo.loaders = {
   mp3 = la and makeSound,
   ogg = la and makeSound,
   wav = la and makeSound,
+  flac = la and makeSound,
   txt = lf and lf.read,
   ttf = lg and makeFont,
   otf = lg and makeFont,

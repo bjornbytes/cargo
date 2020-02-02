@@ -107,6 +107,7 @@ Here is a list of default loaders used:
 | mp3       | `love.audio.newSource`    |
 | ogg       | `love.audio.newSource`    |
 | wav       | `love.audio.newSource`    |
+| flac      | `love.audio.newSource`    |
 | txt       | `love.filesystem.read`    |
 | fnt       | `love.graphics.newFont`   |
 
